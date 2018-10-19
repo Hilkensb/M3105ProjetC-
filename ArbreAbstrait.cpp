@@ -177,10 +177,12 @@ void NoeudInstLire::ajoute(Noeud* variable) {
     m_vecteur.push_back(variable);
 }
 
-int NoeudInstLire::executer() {
+int NoeudInstLire::executer(std::istream & entre) {
     // Exécute l'instruction ecrire
     for (auto param : m_vecteur){
-        
+        int var;
+        entre >> var ;
+        ((SymboleValue*) param) ->setValeur(var);
         }
 }
 

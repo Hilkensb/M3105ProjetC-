@@ -38,8 +38,8 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>Lire</itemPath>
     <itemPath>ecrire</itemPath>
+    <itemPath>lire</itemPath>
     <itemPath>motsCles.txt</itemPath>
     <itemPath>pour</itemPath>
     <itemPath>programme.txt</itemPath>
@@ -70,8 +70,6 @@
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Lire" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Symbole.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Symbole.h" ex="false" tool="3" flavor2="0">
@@ -85,6 +83,8 @@
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ecrire" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lire" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -133,8 +133,6 @@
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Lire" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Symbole.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Symbole.h" ex="false" tool="3" flavor2="0">
@@ -148,6 +146,8 @@
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ecrire" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lire" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

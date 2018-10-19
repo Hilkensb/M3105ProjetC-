@@ -154,7 +154,7 @@ public:
     NoeudInstLire();
     void ajoute(Noeud* variable);
     ~NoeudInstLire() {} // A cause du destructeur virtuel de la classe Noeud
-    int executer();  // Exécute l'instruction lire
+    int executer(std::istream & entre);  // Exécute l'instruction lire
      
 private:
     vector<Noeud *> m_vecteur;

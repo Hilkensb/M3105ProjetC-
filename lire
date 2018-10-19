@@ -2,5 +2,5 @@
 procedure principale()
     i=0;
     j=1;
-    lire(i,j,5)    
+    lire(i,j)    
 finproc
