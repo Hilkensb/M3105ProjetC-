@@ -259,15 +259,17 @@ Noeud* Interpreteur::instEcrire() {
 
 Noeud* Interpreteur::instLire(){
     //<instLire> ::=lire(<variable> { , <variable> } )
+    NoeudInstLire* unNoeud = new NoeudInstLire;
     testerEtAvancer("lire");
     testerEtAvancer("(");
-    expression();
+    unNoeud ->ajoute(expression());
+    
     while(m_lecteur.getSymbole()==","){
         m_lecteur.avancer();
-        expression();
+        unNoeud ->ajoute(expression());
     }
     testerEtAvancer(")");
-    return nullptr;
+    return unNoeud;
 } 
 
 
