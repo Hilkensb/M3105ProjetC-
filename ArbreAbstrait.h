@@ -115,7 +115,7 @@ class NoeudInstRepeter :public Noeud {
 public:
     NoeudInstRepeter(Noeud* condition, Noeud* sequence);
     ~NoeudInstRepeter() {} // A cause du destructeur virtuel de la classe Noeud
-    int executer();  // Exécute l'instruction si : si condition vraie on exécute la séquence
+    int executer();  // Exécute l'instruction repeter
      
 private:
     Noeud*  m_condition;
