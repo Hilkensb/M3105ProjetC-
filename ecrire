@@ -1,0 +1,5 @@
+#test ecrire
+procedure principale()
+    i=0;
+    ecrire("i=",i,5,"fin")    
+finproc
