@@ -15,6 +15,10 @@ int main(int argc, char* argv[]) {
   try {
     Interpreteur interpreteur(fichier);
     interpreteur.analyse();
+    if (interpreteur.getCompteurErreur() >0){
+        cout << " il y a eu "<<interpreteur.getCompteurErreur()<<" erreur(s)"<<endl;
+         
+    }
     // Si pas d'exception levée, l'analyse syntaxique a réussi
     cout << endl << "================ Syntaxe Correcte" << endl;
     // On affiche le contenu de la table des symboles avant d'exécuter le programme
@@ -22,10 +26,12 @@ int main(int argc, char* argv[]) {
     cout << endl << "================ Execution de l'arbre" << endl;
     // On exécute le programme si l'arbre n'est pas vide
     if (interpreteur.getArbre()!=nullptr) interpreteur.getArbre()->executer();
+    
     // Et on vérifie qu'il a fonctionné en regardant comment il a modifié la table des symboles
     cout << endl << "================ Table des symboles apres exécution : " << interpreteur.getTable();
   } catch (InterpreteurException & e) {
     cout << e.what() << endl;
+    
   }
   return 0;
 }

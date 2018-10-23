@@ -38,6 +38,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>Testerreur</itemPath>
     <itemPath>ecrire</itemPath>
     <itemPath>lire</itemPath>
     <itemPath>motsCles.txt</itemPath>
@@ -81,6 +82,8 @@
       <item path="TableSymboles.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Testerreur" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ecrire" ex="false" tool="3" flavor2="0">
       </item>
@@ -144,6 +147,8 @@
       <item path="TableSymboles.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Testerreur" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ecrire" ex="false" tool="3" flavor2="0">
       </item>

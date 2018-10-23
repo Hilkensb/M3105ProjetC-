@@ -16,7 +16,9 @@ public:
 	                                    //   cette méthode se termine normalement et affiche un message "Syntaxe correcte".
                                       //   la table des symboles (ts) et l'arbre abstrait (arbre) auront été construits
 	                                    // Sinon, une exception sera levée
-
+        int getCompteurErreur() const;// retourne le nombre d'erreur syntaxique
+        void incrementeCompteurErrreur();//incrémente la valeur m_compteurErreur
+        
 	inline const TableSymboles & getTable () const  { return m_table;    } // accesseur	
 	inline Noeud* getArbre () const { return m_arbre; }                    // accesseur
 	
@@ -24,6 +26,8 @@ private:
     Lecteur        m_lecteur;  // Le lecteur de symboles utilisé pour analyser le fichier
     TableSymboles  m_table;    // La table des symboles valués
     Noeud*         m_arbre;    // L'arbre abstrait
+    int            m_compteurErreur=0;
+
 
     // Implémentation de la grammaire
     Noeud*  programme();   //   <programme> ::= procedure principale() <seqInst> finproc FIN_FICHIER
@@ -41,6 +45,8 @@ private:
     Noeud*  instPour();     //<instPour> ::=pour ([<affectation>] ; <expression> ; [<affectation>] ) <seqInst> finpour
     Noeud*  instEcrire();   //<instEcrire> ::=ecrire( <expression> | <chaine> {, <expresson> | <chaine> } )
     Noeud*  instLire();     //<instLire> ::=lire(<variable> { , <variable> } )
+    
+    
     
     // Outils pour simplifier l'analyse syntaxique
     void tester (const string & symboleAttendu) const throw (SyntaxeException);   // Si symbole courant != symboleAttendu, on lève une exception
