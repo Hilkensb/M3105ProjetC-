@@ -90,16 +90,23 @@ Noeud* Interpreteur::inst() {
             return instLire();
         }else erreur("Instruction incorrecte");
     } catch (SyntaxeException & e) {
-      
+        while(m_lecteur.getSymbole() != "<VARIABLE>"  && m_lecteur.getSymbole() != "si" 
+             && m_lecteur.getSymbole() != "tantque"  && m_lecteur.getSymbole() != "repeter" 
+             && m_lecteur.getSymbole() != "pour"  && m_lecteur.getSymbole() != "ecrire"
+             && m_lecteur.getSymbole() != "lire"  && m_lecteur.getSymbole() != "finproc"  ){
+            m_lecteur.avancer();
+        }
         incrementeCompteurErrreur();
         m_arbre=  NULL;
-        return NULL;
+        cout << e.what() <<endl;
+        return nullptr;
         
         
-    }
+   }
 }  
 
 Noeud* Interpreteur::affectation() {
+
     // <affectation> ::= <variable> = <expression> 
     tester("<VARIABLE>");
     Noeud* var = m_table.chercheAjoute(m_lecteur.getSymbole()); // La variable est ajoutée à la table eton la mémorise
