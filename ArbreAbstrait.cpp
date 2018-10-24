@@ -92,6 +92,7 @@ int NoeudInstTantQue::executer() {
     while (m_condition->executer()) m_sequence->executer();
     return 0; // La valeur renvoyée ne représente rien !
 }
+void NoeudInstTantQue::traduitEnCPP(ostream & cout, unsigned int indentation) const {}
 
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstSiRiche
@@ -113,6 +114,15 @@ int NoeudInstSiRiche::executer() {
         i == m_grosVecteur.size() - 1 ? m_grosVecteur[i]->executer() : m_grosVecteur[i + 1]->executer();
     return 0;
 }
+
+void NoeudInstSiRiche::traduitEnCPP(ostream & cout, unsigned int indentation) const {
+ cout << setw(4*indentation) << "" << "if ("; // Ecrit "if (" avec un décalage de 4*indentation espaces
+ m_condition->traduitEnCPP(cout, 0); // Traduit la condition en C++ sans décalage
+ cout << ") {"<< endl; // Ecrit ") {" et passe à la ligne
+ m_sequence->traduitEnCPP(cout, indentation+1); // Traduit en C++ la séquence avec indentation augmentée
+ cout << setw(4*indentation) << "" << "}" << endl; // Ecrit "}" avec l'indentation initiale et passe à la ligne
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstRepeter
 ////////////////////////////////////////////////////////////////////////////////
@@ -126,6 +136,8 @@ int NoeudInstRepeter::executer() {
     } while (m_condition->executer());
     return 0; // La valeur renvoyée ne représente rien !
 }
+void NoeudInstRepeter::traduitEnCPP(ostream & cout, unsigned int indentation) const {}
+
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstRepeter
 ////////////////////////////////////////////////////////////////////////////////
@@ -145,6 +157,8 @@ int NoeudInstPour::executer() {
         m_sequence->executer();
     }
 }
+void NoeudInstPour::traduitEnCPP(ostream & cout, unsigned int indentation) const {}
+
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstEcrire
 ////////////////////////////////////////////////////////////////////////////////
@@ -165,6 +179,7 @@ int NoeudInstEcrire::executer() {
             cout << param->executer();
         }
 }
+void NoeudInstEcrire::traduitEnCPP(ostream & cout, unsigned int indentation) const {}
 
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstLire
@@ -185,6 +200,7 @@ int NoeudInstLire::executer() {
         ((SymboleValue*) param) ->setValeur(var);
         }
 }
+void NoeudInstLire::traduitEnCPP(ostream & cout, unsigned int indentation) const {}
 
 
 
