@@ -46,7 +46,8 @@ private:
     Noeud*  instEcrire();   //<instEcrire> ::=ecrire( <expression> | <chaine> {, <expresson> | <chaine> } )
     Noeud*  instLire();     //<instLire> ::=lire(<variable> { , <variable> } )
     
-    
+    void traduitEnCPP(ostream & cout, unsigned int indentation) const ;
+
     
     // Outils pour simplifier l'analyse syntaxique
     void tester (const string & symboleAttendu) const throw (SyntaxeException);   // Si symbole courant != symboleAttendu, on lève une exception
