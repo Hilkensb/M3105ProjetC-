@@ -19,6 +19,10 @@ public:
         int getCompteurErreur() const;// retourne le nombre d'erreur syntaxique
         void incrementeCompteurErrreur();//incrémente la valeur m_compteurErreur
         
+        
+        void traduitEnCPP(ostream & cout, unsigned int indentation) const ;
+
+        
 	inline const TableSymboles & getTable () const  { return m_table;    } // accesseur	
 	inline Noeud* getArbre () const { return m_arbre; }                    // accesseur
 	
@@ -46,7 +50,6 @@ private:
     Noeud*  instEcrire();   //<instEcrire> ::=ecrire( <expression> | <chaine> {, <expresson> | <chaine> } )
     Noeud*  instLire();     //<instLire> ::=lire(<variable> { , <variable> } )
     
-    void traduitEnCPP(ostream & cout, unsigned int indentation) const ;
 
     
     // Outils pour simplifier l'analyse syntaxique

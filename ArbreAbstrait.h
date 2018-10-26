@@ -27,7 +27,7 @@ public:
 
     virtual ~Noeud() {
     } // Présence d'un destructeur virtuel conseillée dans les classes abstraites
-    void traduitEnCPP(ostream & cout, unsigned int indentation)const{cout<<"pas implémenter";}
+    void traduitEnCPP(ostream & cout, unsigned int indentation)const{cout<<setw(4 * indentation)<<"pas implémenter"<<endl;}
 
 };
 
