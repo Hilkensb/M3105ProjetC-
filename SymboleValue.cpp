@@ -25,5 +25,5 @@ ostream & operator<<(ostream & cout, const SymboleValue & symbole) {
 }
           
 void SymboleValue::traduitEnCPP(ostream & cout,unsigned int indentation)const{
-    cout<<setw(4*indentation)<<""<<endl;
+    cout<<setw(4*indentation)<<"" <<endl;
 }

@@ -22,8 +22,11 @@ void NoeudSeqInst::ajoute(Noeud* instruction) {
 }
 
 void NoeudSeqInst::traduitEnCPP(ostream & cout, unsigned int indentation)const {
-    for (unsigned int i = 0; i < m_instructions.size(); i++)
-        cout << setw(4 * indentation) << " int " << (SymboleValue*) m_instructions[i] << endl; // on exécute chaque instruction de la séquence
+    for (unsigned int i = 0; i < m_instructions.size(); i++){
+        cout << setw(4 * indentation) << "" ;
+        m_instructions[i]->traduitEnCPP(cout,0) ;
+        // on exécute chaque instruction de la séquence
+    }
 }
 
 
@@ -42,11 +45,11 @@ int NoeudAffectation::executer() {
 }
 
 void NoeudAffectation::traduitEnCPP(ostream & cout, unsigned int indentation)const {
-    cout << setw(4 * indentation) << " int " ;
+    cout << setw(4 * indentation) << ""<< " int " ;
     m_expression->traduitEnCPP(cout,0);
     cout << " = " ;
     m_variable->traduitEnCPP(cout,0);
-    cout<< endl;
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -85,9 +88,9 @@ int NoeudOperateurBinaire::executer() {
 }
 
 void NoeudOperateurBinaire::traduitEnCPP(ostream & cout, unsigned int indentation)const {
-    cout << setw(4 * indentation);
+    cout << setw(4 * indentation)<< "";
     m_operandeGauche->traduitEnCPP(cout,0);
-    cout<< "" << this->m_operateur << "";
+    cout << this->m_operateur << "";
     m_operandeDroit->traduitEnCPP(cout,0);
 }
 /*
@@ -103,6 +106,12 @@ int NoeudInstSi::executer() {
   if (m_condition->executer()) m_sequence->executer();
   return 0; // La valeur renvoyée ne représente rien !
 }
+ * / cout << setw(4*indentation) << "" << "if ("; // Ecrit "if (" avec un décalage de 4*indentation espaces
+// m_condition->traduitEnCPP(cout, 0); // Traduit la condition en C++ sans décalage
+// cout << ") {"<< endl; // Ecrit ") {" et passe à la ligne
+// m_sequence->traduitEnCPP(cout, indentation+1); // Traduit en C++ la séquence avec indentation augmentée
+// cout << setw(4*indentation) << "" << "}" << endl; // Ecrit "}" avec l'indentation initiale et passe à la ligne
+//}
  */
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstTantQue
@@ -122,7 +131,7 @@ void NoeudInstTantQue::traduitEnCPP(ostream & cout, unsigned int indentation) co
     m_condition->traduitEnCPP(cout, 0); // Traduit la condition en C++ sans décalage
     cout << ") {" << endl; // Ecrit ") {" et passe à la ligne
     m_sequence->traduitEnCPP(cout, indentation + 1); // Traduit en C++ la séquence avec indentation augmentée
-    cout << setw(4 * indentation) << "" << "}" << endl; // Ecrit "}" avec l'indentation initiale et passe à la ligne
+    cout << setw(4 * indentation) << "" << "}" ; // Ecrit "}" avec l'indentation initiale et passe à la ligne
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -157,18 +166,18 @@ void NoeudInstSiRiche::traduitEnCPP(ostream & cout, unsigned int indentation) co
                 m_vecteur[i]->traduitEnCPP(cout, 0);
                 cout << "){";
                 m_vecteur[i + 1]->traduitEnCPP(cout, 0);
-                cout << "}" << endl;
+                cout << "}" ;//endl
             } else {
                 if (i == m_vecteur.size() - 1) {
                     cout << " else{ ";
                     m_vecteur[i]->traduitEnCPP(cout, 0);
-                    cout << "}" << endl;
+                    cout << "}" ;//endl
                 } else {
                     cout << "elseif(";
                     m_vecteur[i]->traduitEnCPP(cout, 0);
                     cout << "){";
                     m_vecteur[i + 1]->traduitEnCPP(cout, 0);
-                    cout << "}" << endl;
+                    cout << "}";//endl
 
                 }
             }
@@ -176,12 +185,7 @@ void NoeudInstSiRiche::traduitEnCPP(ostream & cout, unsigned int indentation) co
     }
 }
 
-// cout << setw(4*indentation) << "" << "if ("; // Ecrit "if (" avec un décalage de 4*indentation espaces
-// m_condition->traduitEnCPP(cout, 0); // Traduit la condition en C++ sans décalage
-// cout << ") {"<< endl; // Ecrit ") {" et passe à la ligne
-// m_sequence->traduitEnCPP(cout, indentation+1); // Traduit en C++ la séquence avec indentation augmentée
-// cout << setw(4*indentation) << "" << "}" << endl; // Ecrit "}" avec l'indentation initiale et passe à la ligne
-//}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstRepeter
@@ -202,7 +206,7 @@ void NoeudInstRepeter::traduitEnCPP(ostream & cout, unsigned int indentation) co
     m_sequence->traduitEnCPP(cout, 0);
     cout << setw(4 * indentation) << "" << "}While(";
     m_condition->traduitEnCPP(cout, 0);
-    cout << ")" << endl;
+    cout << ")" ;//endl
 
 }
 
@@ -237,10 +241,10 @@ void NoeudInstPour::traduitEnCPP(ostream & cout, unsigned int indentation) const
          cout<<",";
             m_affectationFin->traduitEnCPP(cout,0);
         }
-    cout<<"){"<<endl;
-    cout<< setw(4*indentation);
+    cout<<"){";//endl
+    cout<< setw(4*indentation)<<"";
     m_sequence->traduitEnCPP(cout,0);
-    cout<<endl<<"}"<<endl;
+    cout<<endl<<"}";//endl
     
 }
 
@@ -268,10 +272,11 @@ int NoeudInstEcrire::executer() {
 void NoeudInstEcrire::traduitEnCPP(ostream & cout, unsigned int indentation) const {
     for (auto param : m_vecteur)
         if (typeid (*param) == typeid (SymboleValue) && *((SymboleValue*) param) == "<CHAINE>") {
-            cout << "String ="<<((SymboleValue*) param)->getChaine().substr(0, ((SymboleValue*) param)->getChaine().length() - 1);
+            cout << setw(4*indentation)<<""<< "String ="<<((SymboleValue*) param)->getChaine().substr(0, ((SymboleValue*) param)->getChaine().length() );
         } else {
             param->traduitEnCPP(cout,0);
         }
+    cout<<endl;
 
 }
 
@@ -298,7 +303,7 @@ int NoeudInstLire::executer() {
 void NoeudInstLire::traduitEnCPP(ostream & cout, unsigned int indentation) const {
     for (auto param : m_vecteur) {
         int var;
-        cout<<"cin >> "<<var;
+        cout << setw(4*indentation)<<""<<"cin >> "<<var;
         ((SymboleValue*) param) ->traduitEnCPP(cout,0);
     }
 }
