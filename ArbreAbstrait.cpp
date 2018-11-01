@@ -232,14 +232,14 @@ int NoeudInstPour::executer() {
 
 void NoeudInstPour::traduitEnCPP(ostream & cout, unsigned int indentation) const {
     cout << setw(4*indentation)<<""<<"for(";
-    if (m_affectationDebut != NULL) {
+    if (m_affectationDebut != nullptr) {
         m_affectationDebut->traduitEnCPP(cout,0);
-        cout<<",";
+        cout<<";";
     }
     m_condition->traduitEnCPP(cout,0);
-     if (m_affectationFin != NULL) {
-         cout<<",";
-            m_affectationFin->traduitEnCPP(cout,0);
+     if (m_affectationFin != nullptr) {
+         cout<<";";
+         m_affectationFin->traduitEnCPP(cout,0);
         }
     cout<<"){";//endl
     cout<< setw(4*indentation)<<"";
