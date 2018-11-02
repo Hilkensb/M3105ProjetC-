@@ -52,6 +52,7 @@
     <itemPath>programme.txt</itemPath>
     <itemPath>repeter</itemPath>
     <itemPath>siRiche</itemPath>
+    <itemPath>tantque</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -106,6 +107,8 @@
       <item path="repeter" ex="false" tool="3" flavor2="0">
       </item>
       <item path="siRiche" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tantque" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -171,6 +174,8 @@
       <item path="repeter" ex="false" tool="3" flavor2="0">
       </item>
       <item path="siRiche" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tantque" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
