@@ -44,12 +44,12 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>Programme.txt</itemPath>
     <itemPath>Testerreur</itemPath>
     <itemPath>ecrire</itemPath>
     <itemPath>lire</itemPath>
     <itemPath>motsCles.txt</itemPath>
     <itemPath>pour</itemPath>
-    <itemPath>programme.txt</itemPath>
     <itemPath>repeter</itemPath>
     <itemPath>siRiche</itemPath>
     <itemPath>tantque</itemPath>
@@ -78,6 +78,8 @@
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Programme.txt" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Symbole.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Symbole.h" ex="false" tool="3" flavor2="0">
@@ -101,8 +103,6 @@
       <item path="motsCles.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="pour" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="programme.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="repeter" ex="false" tool="3" flavor2="0">
       </item>
@@ -145,6 +145,8 @@
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Programme.txt" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Symbole.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Symbole.h" ex="false" tool="3" flavor2="0">
@@ -168,8 +170,6 @@
       <item path="motsCles.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="pour" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="programme.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="repeter" ex="false" tool="3" flavor2="0">
       </item>

@@ -181,26 +181,31 @@ int NoeudInstSiRiche::executer() {
 void NoeudInstSiRiche::traduitEnCPP(ostream & cout, unsigned int indentation) const {
     int i = 0;
     cout << setw(4 * indentation) << "" << "if ("; // Ecrit "if (" avec un décalage de 4*indentation espaces
-    while ((i < m_vecteur.size() || (m_vecteur.size() % 2 && i < m_vecteur.size() - 1))
-            && !m_vecteur[i]->executer()) {
+    m_vecteur[i]->traduitEnCPP(cout, 0);
+    cout << ") {" << endl;
+    m_vecteur[i+1]->traduitEnCPP(cout, indentation + 1);
+    cout << setw(4*indentation) << "" <<  "}";
+    
+       
+    while ((i < m_vecteur.size() || (m_vecteur.size() % 2 && i < m_vecteur.size() - 1))&& !m_vecteur[i]->executer()) {
         i += 2;
         if (i < m_vecteur.size()) {
-            if (i = 0) {
-                m_vecteur[i]->traduitEnCPP(cout, 0);
-                cout << "){";
-                m_vecteur[i + 1]->traduitEnCPP(cout, 0);
-                cout << "}" ;//endl
+            if (i == 0) {
+                m_vecteur[i]->traduitEnCPP(cout, indentation);
+                cout << "){"<<endl;
+                m_vecteur[i + 1]->traduitEnCPP(cout, indentation+1);
+                cout <<setw(4*indentation) << "" << "}" ;
             } else {
                 if (i == m_vecteur.size() - 1) {
-                    cout << " else{ ";
-                    m_vecteur[i]->traduitEnCPP(cout, 0);
-                    cout << "}" ;//endl
+                    cout<< setw( indentation) << ""<< " else{ "<<endl;
+                    m_vecteur[i]->traduitEnCPP(cout, indentation+1);
+                    cout <<setw(4*indentation) << "" << "}" ;
                 } else {
-                    cout << "elseif(";
-                    m_vecteur[i]->traduitEnCPP(cout, 0);
-                    cout << "){";
-                    m_vecteur[i + 1]->traduitEnCPP(cout, 0);
-                    cout << "}";//endl
+                    cout<<setw(indentation) << "" << "elseif(";
+                    m_vecteur[i]->traduitEnCPP(cout, indentation);
+                    cout << "){"<<endl;
+                    m_vecteur[i + 1]->traduitEnCPP(cout, indentation+1);
+                    cout <<setw(4*indentation) << "" << "}";
 
                 }
             }
