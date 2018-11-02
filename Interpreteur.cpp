@@ -305,7 +305,7 @@ void Interpreteur::traduitEnCPP(ostream & cout, unsigned int indentation) const 
  // Par exemple, si le programme contient i,j,k, il faudra écrire : int i; int j; int k; ...
  for (int i = 0; i < m_table.getTaille(); i++) {
     if (m_table[i] == "<VARIABLE>") {
-        cout << setw(4 * (4*indentation)) << "" << "int " << m_table[i].getChaine() << ";" << endl;
+        cout << setw( 4*(indentation+1)) << "" << "int " << m_table[i].getChaine() << ";" << endl;
     }
 }
  getArbre()->traduitEnCPP(cout,indentation+1); // lance l'opération traduitEnCPP sur la racine
