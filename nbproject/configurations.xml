@@ -44,7 +44,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>Programme.txt</itemPath>
+    <itemPath>Programme</itemPath>
     <itemPath>Testerreur</itemPath>
     <itemPath>ecrire</itemPath>
     <itemPath>lire</itemPath>
@@ -78,7 +78,7 @@
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Programme.txt" ex="false" tool="3" flavor2="0">
+      <item path="Programme" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Symbole.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -145,7 +145,7 @@
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Programme.txt" ex="false" tool="3" flavor2="0">
+      <item path="Programme" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Symbole.cpp" ex="false" tool="1" flavor2="0">
       </item>
