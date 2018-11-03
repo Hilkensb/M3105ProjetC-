@@ -57,8 +57,8 @@ Noeud* Interpreteur::seqInst() {
     NoeudSeqInst* sequence = new NoeudSeqInst();
     do {
         sequence->ajoute(inst());
-    } while (m_lecteur.getSymbole() == "<VARIABLE>" || m_lecteur.getSymbole() == "si" 
-            || m_lecteur.getSymbole() == "tantque" || m_lecteur.getSymbole() == "repeter" 
+    } while (m_lecteur.getSymbole() == "<VARIABLE>" || m_lecteur.getSymbole() == "si"
+            || m_lecteur.getSymbole() == "tantque" || m_lecteur.getSymbole() == "repeter"
             || m_lecteur.getSymbole() == "pour" || m_lecteur.getSymbole() == "ecrire"
             || m_lecteur.getSymbole() == "lire");
     // Tant que le symbole courant est un début possible d'instruction...
@@ -88,22 +88,22 @@ Noeud* Interpreteur::inst() {
             return instEcrire();
         } else if (m_lecteur.getSymbole() == "lire") {
             return instLire();
-        }else erreur("Instruction incorrecte");
+        } else erreur("Instruction incorrecte");
     } catch (SyntaxeException & e) {
-        while(m_lecteur.getSymbole() != "<VARIABLE>"  && m_lecteur.getSymbole() != "si" 
-             && m_lecteur.getSymbole() != "tantque"  && m_lecteur.getSymbole() != "repeter" 
-             && m_lecteur.getSymbole() != "pour"  && m_lecteur.getSymbole() != "ecrire"
-             && m_lecteur.getSymbole() != "lire"  && m_lecteur.getSymbole() != "finproc"  ){
+        while (m_lecteur.getSymbole() != "<VARIABLE>" && m_lecteur.getSymbole() != "si"
+                && m_lecteur.getSymbole() != "tantque" && m_lecteur.getSymbole() != "repeter"
+                && m_lecteur.getSymbole() != "pour" && m_lecteur.getSymbole() != "ecrire"
+                && m_lecteur.getSymbole() != "lire" && m_lecteur.getSymbole() != "finproc") {
             m_lecteur.avancer();
         }
         incrementeCompteurErrreur();
-        m_arbre=  NULL;
-        cout << e.what() <<endl;
+        m_arbre = NULL;
+        cout << e.what() << endl;
         return nullptr;
-        
-        
-   }
-}  
+
+
+    }
+}
 
 Noeud* Interpreteur::affectation() {
 
@@ -177,7 +177,7 @@ Noeud* Interpreteur::instTantQue() {
     Noeud* sequence = seqInst();
     testerEtAvancer("fintantque");
     return new NoeudInstTantQue(condition, sequence);
-    ;
+
 }
 
 Noeud* Interpreteur::instSiRiche() {
@@ -204,7 +204,6 @@ Noeud* Interpreteur::instSiRiche() {
     return unNoeud;
 }
 
-
 Noeud* Interpreteur::instRepeter() {
     //<instRepeter> ::=repeter<sequInst> jusqua (<expression> )
     testerEtAvancer("repeter");
@@ -225,7 +224,6 @@ Noeud* Interpreteur::instPour() {
     Noeud* affectationDebut = NULL;
     if (m_lecteur.getSymbole() == ";") {
         m_lecteur.avancer();
-
     } else {
         affectationDebut = affectation();
         m_lecteur.avancer();
@@ -259,57 +257,55 @@ Noeud* Interpreteur::instEcrire() {
         unNoeud->ajoute(expression());
     }
     while (m_lecteur.getSymbole() == ",") {
-
         m_lecteur.avancer();
         if (m_lecteur.getSymbole() == "<CHAINE>") {
-           fact = m_table.chercheAjoute(m_lecteur.getSymbole());
+            fact = m_table.chercheAjoute(m_lecteur.getSymbole());
             unNoeud->ajoute(fact);
             testerEtAvancer("<CHAINE>");
-
         } else {
-        unNoeud->ajoute(expression());
+            unNoeud->ajoute(expression());
         }
     }
     testerEtAvancer(")");
     return unNoeud;
-    
+
 }
 
-Noeud* Interpreteur::instLire(){
+Noeud* Interpreteur::instLire() {
     //<instLire> ::=lire(<variable> { , <variable> } )
     NoeudInstLire* unNoeud = new NoeudInstLire;
     testerEtAvancer("lire");
     testerEtAvancer("(");
     unNoeud ->ajoute(expression());
-    
-    while(m_lecteur.getSymbole()==","){
+
+    while (m_lecteur.getSymbole() == ",") {
         m_lecteur.avancer();
         unNoeud ->ajoute(expression());
     }
     testerEtAvancer(")");
     return unNoeud;
-} 
+}
 
-int     Interpreteur::getCompteurErreur() const{
-   // retourne le nombre d'erreur syntaxique 
+int Interpreteur::getCompteurErreur() const {
+    // retourne le nombre d'erreur syntaxique 
     return m_compteurErreur;
 }
-void    Interpreteur::incrementeCompteurErrreur(){
-    //modifier la valeur m_compteurErreur
+
+void Interpreteur::incrementeCompteurErrreur() {
+    //incrément de 1 la valeur m_compteurErreur
     m_compteurErreur++;
 }
+
 void Interpreteur::traduitEnCPP(ostream & cout, unsigned int indentation) const {
- cout << setw(4*indentation) << "" << "int main() {" << endl; // Début d’un programme C++
- // Ecrire en C++ la déclaration des variables présentes dans le programme...
- // ... variables dont on retrouvera le nom en parcourant la table des symboles !
- // Par exemple, si le programme contient i,j,k, il faudra écrire : int i; int j; int k; ...
-     cout << setw(4 * indentation) << "" << "using namespace std;" << endl;
- for (int i = 0; i < m_table.getTaille(); i++) {
-    if (m_table[i] == "<VARIABLE>") {
-        cout << setw( 4*(indentation+1)) << "" << "int " << m_table[i].getChaine() << ";" << endl;
+    cout << setw(4 * indentation) << "" << "using namespace std;" << endl;
+    cout << setw(4 * indentation) << "" << "int main() {" << endl; // Début d’un programme C++
+    // Ecrire en C++ la déclaration des variables présentes dans le programme
+    for (int i = 0; i < m_table.getTaille(); i++) {
+        if (m_table[i] == "<VARIABLE>") {
+            cout << setw(4 * (indentation + 1)) << "" << "int " << m_table[i].getChaine() << ";" << endl;
+        }
     }
+    getArbre()->traduitEnCPP(cout, indentation + 1); // lance l'opération traduitEnCPP sur la racine
+    cout << setw(4 * (indentation + 1)) << "" << "return 0;" << endl;
+    cout << setw(4 * indentation) << "}" << endl; // Fin d’un programme C++
 }
- getArbre()->traduitEnCPP(cout,indentation+1); // lance l'opération traduitEnCPP sur la racine
- cout << setw(4*(indentation+1)) << "" << "return 0;" << endl ;
- cout << setw(4*indentation) << "}" << endl ; // Fin d’un programme C++
-} 

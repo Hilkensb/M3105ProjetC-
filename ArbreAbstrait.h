@@ -27,7 +27,10 @@ public:
 
     virtual ~Noeud() {
     } // Présence d'un destructeur virtuel conseillée dans les classes abstraites
-    virtual void traduitEnCPP(ostream & cout, unsigned int indentation)const{cout<<setw(4 * indentation)<< "" <<"pas implémenter"<<endl;}
+
+    virtual void traduitEnCPP(ostream & cout, unsigned int indentation)const {
+        cout << setw(4 * indentation) << "" << "pas implémenter" << endl;
+    }//implémenter un traduitEnCPP pour la classe Noeud ( indique si un traduiEnCpp d'un noeud fils n'a pas étais hériter)
 
 };
 
@@ -43,7 +46,7 @@ public:
     } // A cause du destructeur virtuel de la classe Noeud
     int executer(); // Exécute chaque instruction de la séquence
     void ajoute(Noeud* instruction); // Ajoute une instruction à la séquence
-    void traduitEnCPP(ostream & cout, unsigned int indentation)const;
+    void traduitEnCPP(ostream & cout, unsigned int indentation)const; //traduit en c++ une sequence d'instruction
 
 private:
     vector<Noeud *> m_instructions; // pour stocker les instructions de la séquence
@@ -60,8 +63,8 @@ public:
     ~NoeudAffectation() {
     } // A cause du destructeur virtuel de la classe Noeud
     int executer(); // Exécute (évalue) l'expression et affecte sa valeur à la variable
-    void traduitEnCPP(ostream & cout, unsigned int indentation)const;
-    
+    void traduitEnCPP(ostream & cout, unsigned int indentation)const; //traduit en c++ une affectation
+
 private:
     Noeud* m_variable;
     Noeud* m_expression;
@@ -79,7 +82,7 @@ public:
     ~NoeudOperateurBinaire() {
     } // A cause du destructeur virtuel de la classe Noeud
     int executer(); // Exécute (évalue) l'opération binaire)
-    void traduitEnCPP(ostream & cout, unsigned int indentation)const;
+    void traduitEnCPP(ostream & cout, unsigned int indentation)const; //traduit en c++ un opératuer binaire
 
 
 private:
@@ -89,6 +92,7 @@ private:
 };
 /*
 ////////////////////////////////////////////////////////////////////////////////
+ * Pas utilisé car on utilise déjà un meilleur version du si (SiRiche)
 class NoeudInstSi : public Noeud {
 // Classe pour représenter un noeud "instruction si"
 //  et ses 2 fils : la condition du si et la séquence d'instruction associée
@@ -135,7 +139,7 @@ public:
     void traduitEnCPP(ostream & cout, unsigned int indentation) const;
 
 private:
-    vector<Noeud *> m_vecteur;
+    vector<Noeud *> m_vecteur; //Vecteur contenant des noeud *
 
 };
 ////////////////////////////////////////////////////////////////////////////////

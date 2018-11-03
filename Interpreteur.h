@@ -30,7 +30,7 @@ private:
     Lecteur        m_lecteur;  // Le lecteur de symboles utilisé pour analyser le fichier
     TableSymboles  m_table;    // La table des symboles valués
     Noeud*         m_arbre;    // L'arbre abstrait
-    int            m_compteurErreur=0;
+    int            m_compteurErreur=0; //initilisation d'un compteur d'erreur qui s'incrément pour chaque exception syntaxique (SyntaxeException)
 
 
     // Implémentation de la grammaire
