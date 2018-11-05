@@ -26,12 +26,6 @@ void NoeudSeqInst::traduitEnCPP(ostream & cout, unsigned int indentation)const {
         ptr->traduitEnCPP(cout,indentation);    // on traduit chaque instruction de la séquence en c++
         cout << ";" << endl;   //l'instruction en c++ doit se terminer par un ;
     }
-    /*
-    for (unsigned int i = 0; i < m_instructions.size(); i++){
-        cout << setw(4 * indentation) << "" ;
-        m_instructions[i]->traduitEnCPP(cout,0) ;
-        
-    }*/
 }
 
 
@@ -111,7 +105,7 @@ void NoeudOperateurBinaire::traduitEnCPP(ostream & cout, unsigned int indentatio
         m_operandeDroit->traduitEnCPP(cout, 0); //Traduction de l'opérande droit si il existe
     }
 }
-/*
+
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstSi
 ////////////////////////////////////////////////////////////////////////////////
@@ -135,7 +129,7 @@ int NoeudInstSi::executer() {
 }
  
  
- */
+ 
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstTantQue
 ////////////////////////////////////////////////////////////////////////////////

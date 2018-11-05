@@ -90,9 +90,9 @@ private:
     Noeud* m_operandeGauche;
     Noeud* m_operandeDroit;
 };
-/*
+/
 ////////////////////////////////////////////////////////////////////////////////
- * Pas utilisé car on utilise déjà un meilleur version du si (SiRiche)
+ //Pas utilisé car on utilise déjà un meilleur version du si (SiRiche)
 class NoeudInstSi : public Noeud {
 // Classe pour représenter un noeud "instruction si"
 //  et ses 2 fils : la condition du si et la séquence d'instruction associée
@@ -101,11 +101,12 @@ class NoeudInstSi : public Noeud {
      // Construit une "instruction si" avec sa condition et sa séquence d'instruction
    ~NoeudInstSi() {} // A cause du destructeur virtuel de la classe Noeud
     int executer();  // Exécute l'instruction si : si condition vraie on exécute la séquence
+    void traduitEnCPP(ostream & cout, unsigned int indentation) const;
 
   private:
     Noeud*  m_condition;
     Noeud*  m_sequence;
-};*/
+};
 ////////////////////////////////////////////////////////////////////////////////
 
 class NoeudInstTantQue : public Noeud {

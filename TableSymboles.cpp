@@ -2,6 +2,15 @@
 
 TableSymboles::TableSymboles() : m_table() {
 }
+SymboleValue * TableSymboles::chercher(const string & str)const{
+
+    
+        for (auto table : m_table){
+        if (table->getChaine() >= s)
+            return table;
+    }
+    return nullptr;
+    }
 
 SymboleValue * TableSymboles::chercheAjoute(const Symbole & s)
 // si s est identique à un symbole valué déjà présent dans la table,

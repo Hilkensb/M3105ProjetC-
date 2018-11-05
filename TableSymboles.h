@@ -9,6 +9,9 @@ using namespace std;
 class TableSymboles {
 public:
     TableSymboles(); // Construit une table vide de pointeurs sur des symboles valués
+    
+    SymboleValue* chercher(const std::string & str) const;
+
     SymboleValue* chercheAjoute(const Symbole & symbole);
     // si symbole est identique à un symbole valué déjà présent dans la table,
     // on renvoie un pointeur sur ce symbole valué
