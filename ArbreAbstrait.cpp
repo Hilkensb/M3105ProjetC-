@@ -230,9 +230,9 @@ int NoeudInstRepeter::executer() {
 }
 
 void NoeudInstRepeter::traduitEnCPP(ostream & cout, unsigned int indentation) const {
-    cout << setw(indentation) << "" << "do{";
+    cout << setw(4 * indentation) << "" << "do{"<<endl<<setw(4 * (indentation+1))<< "";
     m_sequence->traduitEnCPP(cout, 0);
-    cout << setw(indentation) << "" << "}While(";
+    cout << setw(4 * indentation) << "" << "}While(";
     m_condition->traduitEnCPP(cout, 0);
     cout << ")" ;//endl
 

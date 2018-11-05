@@ -1,6 +1,12 @@
 #test lire
+#Pour tester lire, il faut 
+#Entrez les valeurs de i et j
+
 procedure principale()
-    i=0;
-    j=1;
-    lire(i,j)    
+    ecrire("Entre la valeur de i puis  de j i=")
+    lire(i)
+    ecrire(" j =")
+    lire(j)
+    ecrire("Tapez trois valeur au clavier")
+    lire(k,l,m)
 finproc
