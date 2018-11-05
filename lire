@@ -1,6 +1,6 @@
 #test lire
 #Pour tester lire, il faut 
-#Entrez les valeurs de i et j
+#Entrez les valeurs de i et j puis de k , l ,m
 
 procedure principale()
     ecrire("Entre la valeur de i puis  de j i=")

@@ -90,7 +90,7 @@ private:
     Noeud* m_operandeGauche;
     Noeud* m_operandeDroit;
 };
-/
+
 ////////////////////////////////////////////////////////////////////////////////
  //Pas utilisé car on utilise déjà un meilleur version du si (SiRiche)
 class NoeudInstSi : public Noeud {

@@ -1,4 +1,5 @@
 #test pour
+#toutes le valeurs de test doivent valoire 5 après éxecution
 procedure principale()
     test1=0;
     test2=0;

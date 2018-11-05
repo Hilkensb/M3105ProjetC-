@@ -61,6 +61,7 @@
     <itemPath>repeter</itemPath>
     <itemPath>siRiche</itemPath>
     <itemPath>tantque</itemPath>
+    <itemPath>testPriorites</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -131,6 +132,8 @@
       <item path="siRiche" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tantque" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="testPriorites" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/testPour.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -218,6 +221,8 @@
       <item path="siRiche" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tantque" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="testPriorites" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/testPour.cpp" ex="false" tool="1" flavor2="0">
       </item>

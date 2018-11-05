@@ -1,4 +1,5 @@
 #test siRiche
+#toutes les valeurs de test doivent valoirent 1 après éxecution
 procedure principale()
     i=1;
     si(i==1)

@@ -1,4 +1,6 @@
 #fichier tant que
+#test1 doit être égale à 17 
+#test2 doit être égale à 14;
 procedure principale()
  test1 = 1+3;
  test2=1;

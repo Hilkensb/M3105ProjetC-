@@ -6,7 +6,7 @@ SymboleValue * TableSymboles::chercher(const string & str)const{
 
     
         for (auto table : m_table){
-        if (table->getChaine() >= s)
+        if (table->getChaine() >= str)
             return table;
     }
     return nullptr;

@@ -1,0 +1,16 @@
+#fichier prioritée
+#test1 doit être égale à 31
+#test2 doit être égale à 4
+procedure principale()
+    test1=6+5*5;
+    test2=5*5/5-1;
+    test3=3*(3+2)+1;
+    test4=5;
+    si(test4==5 ou test4==6)
+        test4=1;
+    finsi
+    si(test4==1 et test1 ==31)
+        test5=1;
+    finsi
+finproc
+
