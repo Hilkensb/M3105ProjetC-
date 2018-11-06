@@ -1,6 +1,8 @@
 #fichier prioritée
 #test1 doit être égale à 31
 #test2 doit être égale à 4
+#test3 doit être égale à 16
+#test4 et test5 doivent valoirent 1
 procedure principale()
     test1=6+5*5;
     test2=5*5/5-1;

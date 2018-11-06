@@ -20,7 +20,6 @@ class testPour : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(testPour);
 
     CPPUNIT_TEST(testMethod);
-    CPPUNIT_TEST(testFailedMethod);
 
     CPPUNIT_TEST_SUITE_END();
 

@@ -52,16 +52,16 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>Programme</itemPath>
-    <itemPath>Testerreur</itemPath>
-    <itemPath>ecrire</itemPath>
-    <itemPath>lire</itemPath>
+    <itemPath>1_siRiche</itemPath>
+    <itemPath>2_tantQue</itemPath>
+    <itemPath>3_repeter</itemPath>
+    <itemPath>4_pour</itemPath>
+    <itemPath>5_ecrire</itemPath>
+    <itemPath>6_lire</itemPath>
+    <itemPath>7_testErreur</itemPath>
+    <itemPath>8_testPriorites</itemPath>
     <itemPath>motsCles.txt</itemPath>
-    <itemPath>pour</itemPath>
-    <itemPath>repeter</itemPath>
-    <itemPath>siRiche</itemPath>
-    <itemPath>tantque</itemPath>
-    <itemPath>testPriorites</itemPath>
+    <itemPath>si</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -73,6 +73,22 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="1_siRiche" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="2_tantQue" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="3_repeter" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="4_pour" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="5_ecrire" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="6_lire" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="7_testErreur" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="8_testPriorites" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ArbreAbstrait.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ArbreAbstrait.h" ex="false" tool="3" flavor2="0">
@@ -87,8 +103,6 @@
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Programme" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Symbole.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Symbole.h" ex="false" tool="3" flavor2="0">
@@ -100,10 +114,6 @@
       <item path="TableSymboles.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Testerreur" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ecrire" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles/f1">
         <cTool>
@@ -119,21 +129,11 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <item path="lire" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="motsCles.txt" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="pour" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="repeter" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="siRiche" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tantque" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="testPriorites" ex="false" tool="3" flavor2="0">
+      <item path="si" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/testPour.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -162,6 +162,22 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="1_siRiche" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="2_tantQue" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="3_repeter" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="4_pour" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="5_ecrire" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="6_lire" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="7_testErreur" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="8_testPriorites" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ArbreAbstrait.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ArbreAbstrait.h" ex="false" tool="3" flavor2="0">
@@ -176,8 +192,6 @@
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Programme" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Symbole.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Symbole.h" ex="false" tool="3" flavor2="0">
@@ -189,10 +203,6 @@
       <item path="TableSymboles.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Testerreur" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ecrire" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles/f1">
         <cTool>
@@ -208,21 +218,11 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <item path="lire" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="motsCles.txt" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="pour" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="repeter" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="siRiche" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tantque" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="testPriorites" ex="false" tool="3" flavor2="0">
+      <item path="si" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/testPour.cpp" ex="false" tool="1" flavor2="0">
       </item>

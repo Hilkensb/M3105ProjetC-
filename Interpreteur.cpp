@@ -106,7 +106,6 @@ Noeud* Interpreteur::inst() {
 }
 
 Noeud* Interpreteur::affectation() {
-
     // <affectation> ::= <variable> = <expression> 
     tester("<VARIABLE>");
     Noeud* var = m_table.chercheAjoute(m_lecteur.getSymbole()); // La variable est ajoutée à la table eton la mémorise
@@ -115,50 +114,6 @@ Noeud* Interpreteur::affectation() {
     Noeud* exp = expression(); // On mémorise l'expression trouvée
     return new NoeudAffectation(var, exp); // On renvoie un noeud affectation
 }
-/*
-Noeud* Interpreteur::expression() {
-    // <expression> ::= <facteur> { <opBinaire> <facteur> }
-    //  <opBinaire> ::= + | - | *  | / | < | > | <= | >= | == | != | et | ou
-    Noeud* fact = facteur();
-    while (m_lecteur.getSymbole() == "+" || m_lecteur.getSymbole() == "-" ||
-            m_lecteur.getSymbole() == "*" || m_lecteur.getSymbole() == "/" ||
-            m_lecteur.getSymbole() == "<" || m_lecteur.getSymbole() == "<=" ||
-            m_lecteur.getSymbole() == ">" || m_lecteur.getSymbole() == ">=" ||
-            m_lecteur.getSymbole() == "==" || m_lecteur.getSymbole() == "!=" ||
-            m_lecteur.getSymbole() == "et" || m_lecteur.getSymbole() == "ou") {
-        Symbole operateur = m_lecteur.getSymbole(); // On mémorise le symbole de l'opérateur
-        m_lecteur.avancer();
-        Noeud* factDroit = facteur(); // On mémorise l'opérande droit
-        fact = new NoeudOperateurBinaire(operateur, fact, factDroit); // Et on construuit un noeud opérateur binaire
-    }
-    return fact; // On renvoie fact qui pointe sur la racine de l'expression
-}
-
-Noeud* Interpreteur::facteur() {
-    // <facteur> ::= <entier> | <variable> | - <facteur> | non <facteur> | ( <expression> )
-    Noeud* fact = nullptr;
-    if (m_lecteur.getSymbole() == "<VARIABLE>" || m_lecteur.getSymbole() == "<ENTIER>") {
-        fact = m_table.chercheAjoute(m_lecteur.getSymbole()); // on ajoute la variable ou l'entier à la table
-        m_lecteur.avancer();
-    } else if (m_lecteur.getSymbole() == "-") { // - <facteur>
-        m_lecteur.avancer();
-        // on représente le moins unaire (- facteur) par une soustraction binaire (0 - facteur)
-        fact = new NoeudOperateurBinaire(Symbole("-"), m_table.chercheAjoute(Symbole("0")), facteur());
-    } else if (m_lecteur.getSymbole() == "non") { // non <facteur>
-        m_lecteur.avancer();
-        // on représente le moins unaire (- facteur) par une soustractin binaire (0 - facteur)
-        fact = new NoeudOperateurBinaire(Symbole("non"), facteur(), nullptr);
-    } else if (m_lecteur.getSymbole() == "(") { // expression parenthésée
-        m_lecteur.avancer();
-        fact = expression();
-        testerEtAvancer(")");
-    } else
-        erreur("Facteur incorrect");
-    return fact;
-}
-
-
- */
 
 Noeud* Interpreteur::expression() {
   // <expression>::=<terme>{+<terme>|-<terme>}
@@ -172,7 +127,6 @@ Noeud* Interpreteur::expression() {
             term = new NoeudOperateurBinaire(operateur, term, termeDroit); // Et on construit un noeud opérateur binaire
         }
         return term; // On renvoie term qui pointe sur la racine de l'expression
-    
 }
 
 Noeud * Interpreteur::terme() {

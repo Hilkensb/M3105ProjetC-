@@ -128,8 +128,8 @@ private:
 ////////////////////////////////////////////////////////////////////////////////
 
 class NoeudInstSiRiche : public Noeud {
-    // Classe pour représenter un noeud "instruction si"
-    //  et ses 2 fils : la condition du si et la séquence d'instruction associée
+    // Classe pour représenter un noeud "instruction siRiche"
+    
 public:
     NoeudInstSiRiche();
     void ajoute(Noeud* sequence);
@@ -140,7 +140,7 @@ public:
     void traduitEnCPP(ostream & cout, unsigned int indentation) const;
 
 private:
-    vector<Noeud *> m_vecteur; //Vecteur contenant des noeud *
+    vector<Noeud *> m_vecteur; //On utilise un seul vecteur pour stocker le(s) noeud(s) condition(s) et  le(s) noeud(s) séquence(s) d'instruction.  
 
 };
 ////////////////////////////////////////////////////////////////////////////////

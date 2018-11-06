@@ -1,7 +1,8 @@
 #test lire
 procedure principale()
-    i=0;
-    j=1;
-    lir(i,
+    i=0
+    lire(i,
+    
+    
 finproc
 

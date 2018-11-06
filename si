@@ -1,0 +1,11 @@
+# Fichier de test
+# test1 doit être égale à 15 et test2 doit être égale à 1
+procedure principale()
+  test1 = 12+3;
+  test2 = 0;
+  si (test1>14)
+    test2=1;
+  finsi
+finproc
+# Commentaire Final
+

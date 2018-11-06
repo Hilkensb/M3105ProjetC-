@@ -31,18 +31,27 @@ void testPour::tearDown() {
 }
 
 void testPour::testMethod() {
-    std::string nomFichier ="pour";
+    std::string nomFichier ="4_pour";
     ifstream fichierATester(nomFichier.c_str());
 
     Interpreteur interpreteur(fichierATester);
-
-    
+ 
     CPPUNIT_ASSERT_NO_THROW_MESSAGE("Auncune erreur de syntaxe ",interpreteur.analyse());
-    CPPUNIT_ASSERT_NO_THROW_MESSAGE("Auncune erreur  à l'execution ",interpreteur.getArbre()->executer());
     
     SymboleValue * symbole1 =  interpreteur.getTable().chercher("test1");
     SymboleValue * symbole2 =  interpreteur.getTable().chercher("test2");
-        SymboleValue * symbole3 =  interpreteur.getTable().chercher("test3");
+    SymboleValue * symbole3 =  interpreteur.getTable().chercher("test3");
+    
+    CPPUNIT_ASSERT_EQUAL_MESSAGE("test1 n'est pas définie",symbole1->estDefini(),false);
+    CPPUNIT_ASSERT_EQUAL_MESSAGE("test2 n'est pas définie",symbole2->estDefini(),false);
+    CPPUNIT_ASSERT_EQUAL_MESSAGE("test3 n'est pas définie",symbole3->estDefini(),false);
+    
+    CPPUNIT_ASSERT_NO_THROW_MESSAGE("Auncune erreur  à l'execution ",interpreteur.getArbre()->executer());
+    
+    CPPUNIT_ASSERT_EQUAL_MESSAGE("test1 est  définie",symbole1->estDefini(),true);
+    CPPUNIT_ASSERT_EQUAL_MESSAGE("test2 est  définie",symbole2->estDefini(),true);
+    CPPUNIT_ASSERT_EQUAL_MESSAGE("test3 est  définie",symbole3->estDefini(),true);
+
 
     CPPUNIT_ASSERT_EQUAL_MESSAGE("test1 = 5",symbole1->getValeur(),5);
     CPPUNIT_ASSERT_EQUAL_MESSAGE("test2 = 5",symbole2->getValeur(),5);

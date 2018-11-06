@@ -1,5 +1,5 @@
 #test siRiche
-#toutes les valeurs de test doivent valoirent 1 après éxecution
+#toutes les valeurs de test doivent valoirent 1 après l'éxecution
 procedure principale()
     i=1;
     si(i==1)
@@ -9,6 +9,7 @@ procedure principale()
     sinon
         test1=0;
     finsi
+
     i=2;
     si(i==1)
         test2=0;
@@ -17,6 +18,7 @@ procedure principale()
     sinon
         test2=0;
     finsi
+
     i=3;
     si(i==1)
         test3=0;
@@ -25,9 +27,21 @@ procedure principale()
     sinon
         test3=1;
     finsi
-    i=4;
-    test4=1;
+
+    i=3;
     si(i==1)
         test4=0;
+    sinonsi(i==2)
+        test4=0;
+    sinonsi(i==3)
+        test4=1;
+    sinon
+        test4=0;
+    finsi
+
+    i=4;
+    test5=1;
+    si(i==1)
+        test5=0;
     finsi
 finproc
