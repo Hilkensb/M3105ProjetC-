@@ -1,0 +1,24 @@
+# Fichier de test
+# test1 et test2 doivent être égale à 1
+procedure principale()
+    i=0;
+    selon(i)
+    cas 0 :
+        test1=1;
+    cas 2 :
+        test1=0;
+    defaut :
+        test1=2;
+    finselon
+    j=1;
+    selon(j)
+    cas 0 :
+        test2=2;
+    cas 2 :
+        test2=0;
+    defaut :
+        test2=1;
+    finselon
+
+finproc
+# Commentaire Final

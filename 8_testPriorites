@@ -2,7 +2,7 @@
 #test1 doit être égale à 31
 #test2 doit être égale à 4
 #test3 doit être égale à 16
-#test4 et test5 doivent valoirent 1
+#test4 et test5 doivent valoires 1
 procedure principale()
     test1=6+5*5;
     test2=5*5/5-1;
@@ -14,5 +14,9 @@ procedure principale()
     si(test4==1 et test1 ==31)
         test5=1;
     finsi
+    i=0;
+    j=2;
+    i++;    
+    j--;
 finproc
 

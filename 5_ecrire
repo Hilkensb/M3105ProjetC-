@@ -1,5 +1,5 @@
 #test ecrire
 procedure principale()
     test1=0;
-    ecrire("i=",test1,5,"fin")    
+    ecrire("test1=",test1,5,"fin")    
 finproc

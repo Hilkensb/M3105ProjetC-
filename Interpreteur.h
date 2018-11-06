@@ -34,18 +34,18 @@ private:
 
 
     // Implémentation de la grammaire
-    Noeud*  programme();   //   <programme> ::= procedure principale() <seqInst> finproc FIN_FICHIER
-    Noeud*  seqInst();	   //     <seqInst> ::= <inst> { <inst> }
-    Noeud*  inst();	       //        <inst> ::= <affectation> ; | <instSi>
-    Noeud*  affectation(); // <affectation> ::= <variable> = <expression> 
+    Noeud*  programme();    //   <programme> ::= procedure principale() <seqInst> finproc FIN_FICHIER
+    Noeud*  seqInst();	    //     <seqInst> ::= <inst> { <inst> }
+    Noeud*  inst();	    //        <inst> ::= <affectation> ; | <instSi>
+    Noeud*  affectation();  // <affectation> ::= <variable> = <expression> 
     
-    Noeud* expression();  // <expression>::=<terme>{+<terme>|-<terme>}
-    Noeud* facteur();   // <terme>::=<facteur>{*<facteur>|/<facteur>}
-
-    Noeud* terme();
-    Noeud* expBool();
-    Noeud* relationEt();
-    Noeud* relation();
+    Noeud* expression();    // <expression> ::= <terme>{ +<terme> | -<terme> }
+    Noeud* facteur();       // <terme>::= <facteur> { * <facteur> | / <facteur>}
+    Noeud* terme();         // <facteur>::= <entier> | <variable> | - <expBool> | non <expBool> | (<expBool>)
+    Noeud* expBool();       // <expBool>::= <relationET> { ou <relationEt> }
+    Noeud* relationEt();    //<relationEt>::= <relation> { et <relation> }
+    Noeud* relation();      //<relation>::= <expression> { <opRel> <expression>}
+                            //<opRel>::= == | != | < | <= | > | >=
 
     Noeud*  instSi();       //<instSi> ::= si ( <expression> ) <seqInst> finsi
     Noeud*  instSiRiche();  //<intSiRiche> ::= si (<expression>) <seqInst> {sinonsi (<expression>) <seqInst> } [sinon <seqInst>] finsi
@@ -54,7 +54,7 @@ private:
     Noeud*  instPour();     //<instPour> ::=pour ([<affectation>] ; <expression> ; [<affectation>] ) <seqInst> finpour
     Noeud*  instEcrire();   //<instEcrire> ::=ecrire( <expression> | <chaine> {, <expresson> | <chaine> } )
     Noeud*  instLire();     //<instLire> ::=lire(<variable> { , <variable> } )
-    
+    Noeud*  instSelon();   // <instSelon> ::= selon ( <facteur> ) { cas <facteur> : <seqInst> } [defaut : <seqInst>] finselon
 
     
     // Outils pour simplifier l'analyse syntaxique

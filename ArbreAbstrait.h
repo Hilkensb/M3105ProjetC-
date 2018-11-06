@@ -209,4 +209,5 @@ private:
     vector<Noeud *> m_vecteur;
 
 };
+
 #endif /* ARBREABSTRAIT_H */

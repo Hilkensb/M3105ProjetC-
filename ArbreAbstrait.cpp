@@ -79,9 +79,6 @@ int NoeudOperateurBinaire::executer() {
         valeur = og / od;
     }
     return valeur; // On retourne la valeur calculée
-
-
-
 }
 
 void NoeudOperateurBinaire::traduitEnCPP(ostream & cout, unsigned int indentation)const {
@@ -186,7 +183,7 @@ void NoeudInstSiRiche::traduitEnCPP(ostream & cout, unsigned int indentation) co
         if (i < m_vecteur.size()) {
             if (i != 0){
                 if (i == m_vecteur.size() - 1) {
-                    cout<< setw( indentation) << ""<< " else{ "<<endl;
+                    cout<< setw(indentation) << ""<< "else{"<<endl;
                     m_vecteur[i]->traduitEnCPP(cout, indentation+1);//Traduction de la séquence d'instruction du else en c++
                     cout <<setw(4*indentation) << "" << "}" ;
                 } else {
@@ -201,8 +198,6 @@ void NoeudInstSiRiche::traduitEnCPP(ostream & cout, unsigned int indentation) co
         }
     }
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // NoeudInstRepeter
@@ -320,6 +315,3 @@ void NoeudInstLire::traduitEnCPP(ostream & cout, unsigned int indentation) const
          param->traduitEnCPP(cout,0); //Traduit le contenue de m_vecteur en c++            
     }
 }
-
-
-
